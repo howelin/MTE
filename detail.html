@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"  />
+<title>拍拍微店管理后台</title>
+<link href="webapp.css" rel="stylesheet">
+<style>
+ul,li{list-style:none;margin:0;padding:0;}
+.detail_wrap{padding:10px 10px 49px;}
+.mod_detail{margin-bottom:25px;}
+.mod_detail .img_wrap{margin-bottom:10px;overflow:hidden;}
+.mod_detail .img_wrap img{display:block;border-radius:3px;width:100%;}
+.mod_detail .disc{color:#333;}
+.mod_detail .d_a_wrap{font:12px arial;color:#999;}
+.mod_detail .author{margin-left:10px;color:#666;}
+
+.mod_review{background:#fafbfc;border-radius:5px;padding:20px 15px 0;overflow:hidden;box-shadow:0 1px 1px rgba(66, 66, 66, .3);}
+.review_bar{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin-bottom:15px;}
+.review_bar .inner{border-top:1px solid #fff;border-bottom:1px solid #fff;background:#f0f0f0;height:40px;font:16px/40px 微软雅黑;color:#000;text-indent:10px;}
+.review_bar .review_ico{width:40px;height:30px;display:inline-block;*display:inline;*zoom:1;margin-right:10px;vertical-align:middle;background:#000;}
+.reveiw_list li{margin-bottom:20px;position:relative;}
+.reveiw_list .avatar{width:40px;height:40px;border-radius:3px;position:absolute;left:0;top:11px;}
+.reveiw_list .reveiw_con{margin-left:55px;border:1px solid #eee;border-radius:20px;padding:5px 10px;background:#fff;color:#333;position:relative;background-image: linear-gradient(to top, #e6e6e6, #f8f8f8);}
+.reveiw_list .reveiw_con .time{font-size:12px;color:#999;position:relative;z-index:1;}
+.reveiw_list .reveiw_con:after{content:url(review_angel.png);width:40px;height:17px;position:absolute;left:-11px;top:32px;}
+/*.reveiw_list .reveiw_con:before{content:".";border-width:7px;border-style:dashed solid dashed dashed;border-color:transparent #fff transparent transparent;width:0;height:0;overflow:hidden;position:absolute;left:-14px;top:8px;z-index:1;}*/
+.reveiw_list .item_even .reveiw_con{margin-left:0;margin-right:55px;background-image: linear-gradient(to top, #01a257, #02bb7a);color:#fff;}
+.reveiw_list .item_even .reveiw_con .time{color:#fff;opacity:0.6;}
+.reveiw_list .item_even .avatar{left:auto;right:0;}
+.reveiw_list .item_even .reveiw_con:after{content:url(review_angel_r.png);left:auto;right:-11px;width:25px;}
+
+.btnbar{position:fixed;width:100%;left:0;bottom:0;border-top:1px solid #ccc;z-index:2;}
+.btnbar .inner{border-top:1px solid #fff;padding:8px 10px;background-image: linear-gradient(to top, #e6e6e6, #f8f8f8);
+    box-shadow: 0 -1px 1px rgba(66, 66, 66, .3);}
+.btnbar .review_input{height:28px;border:1px solid #ccc;padding:0 5px;width:190px;font-size:10px;color:#666;border-radius:3px;vertical-align:middle;margin-right:5px;}
+.btnbar .review_btn{height:30px;vertical-align:middle;background:#f0f0f0;border:0;font:14px 微软雅黑;cursor:pointer;color:#fff;text-align:center;-webkit-appearance: none;border-radius:3px;padding:0 10px;background: rgb(204,204,204); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(204,204,204,1) 0%, rgba(102,102,102,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(204,204,204,1)), color-stop(100%,rgba(102,102,102,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(204,204,204,1) 0%,rgba(102,102,102,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(204,204,204,1) 0%,rgba(102,102,102,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(204,204,204,1) 0%,rgba(102,102,102,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(204,204,204,1) 0%,rgba(102,102,102,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#666666',GradientType=0 ); /* IE6-9 */
+
+
+}
+</style>
+</head>
+<body class="detail_page">
+<div class="container detail_wrap">
+    <div class="mod_detail">
+        <div class="img_wrap"><img src="http://farm4.staticflickr.com/3781/10221303785_56466e560a_z.jpg"></div>
+        <div class="disc">描述文案描述文案描述文案描述文案描述文案描述文案描述文案描述文案描述文案描述文案描述文案描述文案...</div>
+        <div class="d_a_wrap"><span class="date">2014-03-14</span><span class="author">howelin</span></div>
+    </div>
+    <div class="mod_review">
+        <ul class="reveiw_list">
+            <li class="item item_odd">
+                <img src="http://dayu.oa.com/avatars/samgui/avatar.jpg" class="avatar" />
+                <div class="reveiw_con">
+                    <div class="review">描述文案</div>
+                    <div class="time">30分钟前</div>
+                    <i class="angle"></i>
+                </div>
+            </li>
+            <li class="item item_even">
+                <img src="http://dayu.oa.com/avatars/samgui/avatar.jpg" class="avatar" />
+                <div class="reveiw_con">
+                    <div class="review">描述文案</div>
+                    <div class="time">30分钟前</div>
+                    <i class="angle"></i>
+                </div>
+            </li>
+            <li class="item item_odd">
+                <img src="http://dayu.oa.com/avatars/samgui/avatar.jpg" class="avatar" />
+                <div class="reveiw_con">
+                    <div class="review">描述文案</div>
+                    <div class="time">30分钟前</div>
+                    <i class="angle"></i>
+                </div>
+            </li>
+            <li class="item item_even">
+                <img src="http://dayu.oa.com/avatars/samgui/avatar.jpg" class="avatar" />
+                <div class="reveiw_con">
+                    <div class="review">描述文案</div>
+                    <div class="time">30分钟前</div>
+                    <i class="angle"></i>
+                </div>
+            </li>
+            <li class="item item_odd">
+                <img src="http://dayu.oa.com/avatars/samgui/avatar.jpg" class="avatar" />
+                <div class="reveiw_con">
+                    <div class="review">描述文案</div>
+                    <div class="time">30分钟前</div>
+                    <i class="angle"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="btnbar">
+    <div class="inner">
+        <input type="text" class="review_input" value="" placeholder="评论内容..." name="reviewInput">
+        <input type="submit" class="review_btn">
+    </div>
+</div>
+</body>
+</html>

@@ -1,216 +1,176 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="gbk">
-<title>MTE</title>
-<link  rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
-<link  rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css">
-<style>
-body,h1,h2,h3,h4,ul,li,p{margin:0;padding:0;}
-ul,li{list-style:none;}
-img{vertical-align:top;}
-a{text-decoration:none;color:#666;}
-a:hover{text-decoration:underline;color:#666;}
-body{background-color:#EFEFEF;color:#333;font:14px/1.5 \5FAE\8F6F\96C5\9ED1;}
-.mte_header{background-color:#f7f7f7;height:68px;box-shadow:0 0 2px 3px #ddd;border-bottom:1px solid #ddd;}
-.mte_header .inner{width:985px;margin:0 auto;position:relative;}
-.mte_header h1{font:40px Comic Sans MS;float:left;margin-right:15px;margin-top:5px;}
-.mte_header h2{font:24px 微软雅黑;display:inline-block;*display:inline;*zoom:1;margin-top:21px;}
-.mte_header .user_wrap{position:absolute;right:0;top:10px;width:200px;}
-.mte_header .user_avatar{vertical-align:middle;margin-right:10px;}
-.mte_header .user_name{margin-right:10px;}
-.mte_main{width:985px;margin:0 auto;overflow:hidden;padding-top:20px;}
-.search_wrap{float:right;margin-bottom:20px;}
-.search_wrap .input_txt{border:1px solid #ddd;border-radius:3px;font-size:14px;padding:3px 5px;width:190px;line-height:18px;}
-.demo_lists{overflow:hidden;width:110%;}
-.demo_lists li{float:left;width:228px;background-color:#e5e5e5;margin:0 25px 25px 0;border-bottom:1px solid #ccc;overflow:hidden;padding-bottom:15px;position:relative;}
-.demo_lists li:hover{background-color:#fff;}
-.demo_lists .img_wrap{margin-bottom:10px;}
-.demo_lists .demo_name{font:16px 微软雅黑;color:#666;text-indent:10px;}
-.demo_lists .opt_wrap{position:absolute;right:0;top:0;width:20px;padding:5px 5px 0;background-color:#f00;text-align:center;display:none;}
-.demo_lists li:hover .opt_wrap{display:block;}
-.demo_lists .opt_wrap a{display:inline-block;margin-bottom:5px;width:20px;height:20px;}
-.mte_footer{text-align:center;color:#999;padding:60px 0 20px;line-height:2;font-family:arial;}
-.demo_lists .opt_wrap i{margin-top:3px;}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>MTE绉诲姩瑙︿綋楠�</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <style>
+        /* rest */
+        * { -webkit-tap-highlight-color: transparent; outline: 0; }
+        body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin: 0; padding: 0; vertical-align: baseline; }
+        img { max-width: 100%; border: 0 none; }
+        i, em { font-style: normal; }
+        ol, ul { list-style: none; }
+        input, select, h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+        table { border-collapse: collapse; border-spacing: 0; }
+        a { text-decoration: none; color: #555; }
+        a, img { -webkit-touch-callout: none; }
 
-.bs-docs-example{clear:both;border:1px dashed #ddd;margin-bottom:30px;}
-.bs-docs-example:after{content:"编辑内容";border:1px dashed #ddd;}
-.form-horizontal .control-label{margin-right:10px;}
-.form-horizontal .controls{margin:0;}
-</style>
+        body {
+            margin: 0 auto;
+            min-width: 320px;
+            max-width: 640px;
+            height: 100%;
+            background: #e6e6e6;
+            font-size: 14px;
+            font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Arial;
+            line-height: 1.5;
+            color: #555;
+            -webkit-text-size-adjust: 100%;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        /* layout */
+        .toolbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 45px;
+            line-height: 45px;
+            background-image: linear-gradient(to top, #e6e6e6, #f8f8f8);
+            box-shadow: 0 1px 1px rgba(66, 66, 66, .3);
+            z-index: 50;
+        }
+
+        .search {
+            position: absolute;
+            top: 1px;
+            left: 0;
+            width: 100%;
+            height: 44px;
+            text-align: center;
+            z-index: 2;
+            background-image: linear-gradient(to top, #e6e6e6, #f8f8f8);
+            -webkit-transition: all .5s ease-out;
+            transition: all .5s ease-out;
+        }
+
+        .search .keyword {
+            width: 85%;
+            height: 28px;
+            padding: 0 3px 0 25px;
+            border: solid 1px #ddd;
+            background-color: #fff;
+            border-radius: 4px;
+            background: #fff url(icon_search.png) 5px center no-repeat;
+            background-size: 14px 14px;
+        }
+
+        .search a { color: #3879d9; }
+        .container { padding: 55px 10px 0; }
+
+        .project {
+            position: relative;
+            margin-bottom: 10px;
+            border-radius: 3px;
+            background-color: #fff;
+            box-shadow: 0 1px 1px rgba(66, 66, 66, .3);
+            overflow: hidden;
+        }
+
+        .project:after {
+            position: absolute;
+            top: 12px;
+            right: 10px;
+            width: 8px;
+            height: 11px;
+            content: '';
+            background: url(arrow.png) no-repeat;
+            background-size: 8px 11px;
+        }
+
+        .project img { display: block; }
+
+        .name {
+            display: block;
+            padding: 8px 10px 6px;
+            text-shadow: 1px 1px 1px #fff;
+            background-image: linear-gradient(to top, #e3e3e3, #f6f6f6);
+            border-bottom: 1px solid #ddd;
+        }
+
+        .list_view img {
+            float: left;
+            width: 80px;
+            height: 80px;
+            margin-right: 10px;
+        }
+
+        @keyframes loading {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @-webkit-keyframes loading {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+    </style>
 </head>
-<body> 
-<div class="mte_header">
-    <div class="inner">
-        <h1>MTE</h1>
-        <h2>移动触体验</h2>
-        <div id="user_info" class="user_wrap">
-	        <img id="avatar" src="http://dayu.oa.com/avatars/howelin/avatar.jpg" alt="user" class="user_avatar">                 
-	        <a href="###" style="cursor:pointer" class="user_name">howelin</a>                 
-	        <a href="###" id="logout">退出</a>
-        </div>
+<body class="list_view">
+<div class="toolbar">
+    <div class="search">
+        <input type="text" placeholder="鎼滅储" class="keyword"/>
     </div>
 </div>
-<div class="mte_main">
-	<div class="search_wrap">
-		<input type="text" id="searchApi" placeholder="Search..." class="input_txt">
-	</div>
-    <form class="bs-docs-example form-horizontal">
-        <div style="float:left;width:400px;">
-        <div class="control-group">
-          <label class="control-label" for="inputEmail">标题：</label>
-          <div class="controls">
-            <input type="text" id="inputEmail" placeholder="">
-          </div>
-        </div>
-        <div class="control-group">
-          <label class="control-label" for="inputPassword">链接：</label>
-          <div class="controls">
-            <input type="password" id="inputPassword" placeholder="">
-          </div>
-        </div>
-        </div>
-        <div class="control-group">
-          <label class="control-label" for="inputPassword">图片：</label>
-          <div class="controls">
-            <input type="password" id="inputPassword" placeholder="">
-          </div>
-        </div>
-        <div class="control-group" style="margin:0;">
-          <label class="control-label" for="inputPassword">&nbsp;</label>
-          <div class="controls">
-            <button type="submit" class="btn btn-primary">提交</button>
-          </div>
-        </div>
-    </form>
-    <ul class="demo_lists">
-        <li class="item_1">
-       		<a href="###" target="_blank">
-       			<img src="demo_pic.jpg" alt="demo" title="demo" class="img_wrap">
-       			<h4 class="demo_name">品牌特卖</h4>
-       		</a>
-          <div class="opt_wrap">
-              <a href="#" title="编辑"><i class="icon-pencil"></i></a>
-              <a href="#" title="删除"><i class="icon-trash"></i></a>
-          </div>
+<div class="container">
+    <ul class="projects">
+        <li class="project">
+            <a href="http://static.paipaiimg.com/wx/html/mall/ju.html" class="name">寰俊鑱氭儬</a>
         </li>
-        <li class="item_2">
-       		<a href="###" target="_blank">
-       			<img src="demo_pic.jpg" alt="demo" title="demo" class="img_wrap">
-       			<h4 class="demo_name">品牌特卖</h4>
-       		</a>
-          <div class="opt_wrap">
-              <a href="#" title="编辑"><i class="icon-pencil"></i></a>
-              <a href="#" title="删除"><i class="icon-trash"></i></a>
-          </div>
+        <li class="project">
+            <a href="http://static.paipaiimg.com/wx/html/mall/brand_list_v5.html" class="name">寰俊鍝佺墝鐗瑰崠</a>
         </li>
-        <li class="item_3">
-       		<a href="###" target="_blank">
-       			<img src="demo_pic.jpg" alt="demo" title="demo" class="img_wrap">
-       			<h4 class="demo_name">品牌特卖</h4>
-       		</a>
-          <div class="opt_wrap">
-              <a href="#" title="编辑"><i class="icon-pencil"></i></a>
-              <a href="#" title="删除"><i class="icon-trash"></i></a>
-          </div>
+        <li class="project">
+            <a href="http://caocao.me/wx/html/detail/detail_standard_v1.html" class="name">鍟嗚_H5鏍囧噯鐗�</a>
         </li>
-        <li class="item_4">
-       		<a href="###" target="_blank">
-       			<img src="demo_pic.jpg" alt="demo" title="demo" class="img_wrap">
-       			<h4 class="demo_name">品牌特卖</h4>
-       		</a>
-          <div class="opt_wrap">
-              <a href="#" title="编辑"><i class="icon-pencil"></i></a>
-              <a href="#" title="删除"><i class="icon-trash"></i></a>
-          </div>
+        <li class="project">
+            <a href="http://caocao.me/wx/html/detail/detail_brand_v1.html" class="name">鍟嗚_寰俊鍝佺墝鐗瑰崠鐗�</a>
         </li>
-        <li class="item_5">
-       		<a href="###" target="_blank">
-       			<img src="demo_pic.jpg" alt="demo" title="demo" class="img_wrap">
-       			<h4 class="demo_name">品牌特卖</h4>
-       		</a>
-          <div class="opt_wrap">
-              <a href="#" title="编辑"><i class="icon-pencil"></i></a>
-              <a href="#" title="删除"><i class="icon-trash"></i></a>
-          </div>
+        <li class="project">
+            <a href="http://caocao.me/wx/html/detail/detail_ju_v1.html" class="name">鍟嗚_寰俊鑱氭儬鐗�</a>
         </li>
-        <li class="item_6">
-       		<a href="###" target="_blank">
-       			<img src="demo_pic.jpg" alt="demo" title="demo" class="img_wrap">
-       			<h4 class="demo_name">品牌特卖</h4>
-       		</a>
-          <div class="opt_wrap">
-              <a href="#" title="编辑"><i class="icon-pencil"></i></a>
-              <a href="#" title="删除"><i class="icon-trash"></i></a>
-          </div>
+        <li class="project">
+            <a href="http://caocao.me/wx/html/xin/" class="name">鏂板彂鐜�</a>
         </li>
-        <li class="item_7">
-       		<a href="###" target="_blank">
-       			<img src="demo_pic.jpg" alt="demo" title="demo" class="img_wrap">
-       			<h4 class="demo_name">品牌特卖</h4>
-       		</a>
-          <div class="opt_wrap">
-              <a href="#" title="编辑"><i class="icon-pencil"></i></a>
-              <a href="#" title="删除"><i class="icon-trash"></i></a>
-          </div>
-        </li>
-        <li class="item_8">
-       		<a href="###" target="_blank">
-       			<img src="demo_pic.jpg" alt="demo" title="demo" class="img_wrap">
-       			<h4 class="demo_name">品牌特卖</h4>
-       		</a>
-          <div class="opt_wrap">
-              <a href="#" title="编辑"><i class="icon-pencil"></i></a>
-              <a href="#" title="删除"><i class="icon-trash"></i></a>
-          </div>
-        </li>
-        <li class="item_9">
-       		<a href="###" target="_blank">
-       			<img src="demo_pic.jpg" alt="demo" title="demo" class="img_wrap">
-       			<h4 class="demo_name">品牌特卖</h4>
-       		</a>
-          <div class="opt_wrap">
-              <a href="#" title="编辑"><i class="icon-pencil"></i></a>
-              <a href="#" title="删除"><i class="icon-trash"></i></a>
-          </div>
-        </li>
-        <li class="item_10">
-       		<a href="###" target="_blank">
-       			<img src="demo_pic.jpg" alt="demo" title="demo" class="img_wrap">
-       			<h4 class="demo_name">品牌特卖</h4>
-       		</a>
-          <div class="opt_wrap">
-              <a href="#" title="编辑"><i class="icon-pencil"></i></a>
-              <a href="#" title="删除"><i class="icon-trash"></i></a>
-          </div>
-        </li>
-        <li class="item_11">
-       		<a href="###" target="_blank">
-       			<img src="demo_pic.jpg" alt="demo" title="demo" class="img_wrap">
-       			<h4 class="demo_name">品牌特卖</h4>
-       		</a>
-          <div class="opt_wrap">
-              <a href="#" title="编辑"><i class="icon-pencil"></i></a>
-              <a href="#" title="删除"><i class="icon-trash"></i></a>
-          </div>
-        </li>
-        <li class="item_12">
-       		<a href="###" target="_blank">
-       			<img src="demo_pic.jpg" alt="demo" title="demo" class="img_wrap">
-       			<h4 class="demo_name">品牌特卖</h4>
-       		</a>
-          <div class="opt_wrap">
-              <a href="#" title="编辑"><i class="icon-pencil"></i></a>
-              <a href="#" title="删除"><i class="icon-trash"></i></a>
-          </div>
+        <li class="project">
+            <a href="http://caocao.me/wx/html/sale/" class="name">浠婃棩鐗逛环</a>
         </li>
     </ul>
 </div>
-<div class="mte_footer">
-    <div class="copyright">
-        <p>Copyright &copy; 1998-2012 Tencent Inc. All Rights Reserved.</p>
-        <p>Powered &amp; Designed by ECD.</p>
-    </div>
-</div>
+<script src="zepto.min.js"></script>
+<script>
+    $(function () {
+        $('.keyword').bind('input', function () {
+            var val = $.trim($(this).val());
+
+            $('.project').each(function () {
+                var me = $(this), name = me.find('.name').html();
+                //remark = me.find('.remark').html();
+                //&& remark.indexOf(val) == -1
+                if (val != '') {
+                    me[name.indexOf(val) == -1 ? 'hide' : 'show']();
+                } else {
+                    me.show();
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
